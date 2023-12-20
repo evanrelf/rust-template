@@ -35,10 +35,14 @@
             crane.buildPackage (common // { inherit cargoArtifacts; });
         };
 
-        checks = packages // { devShell = devShells.default; };
+        devShells = {
+          default = devShells.template;
 
-        devShells.default = crane.devShell {
-          inputsFrom = [ packages.template ];
+          template = crane.devShell {
+            inputsFrom = [ packages.template ];
+          };
         };
+
+        checks = packages // devShells;
       });
 }
