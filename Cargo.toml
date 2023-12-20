@@ -1,0 +1,10 @@
+[package]
+name = "template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[lints]
+clippy.pedantic = "warn"
+clippy.use_self = "warn"
