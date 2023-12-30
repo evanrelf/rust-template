@@ -42,7 +42,5 @@
             inputsFrom = [ packages.template ];
           };
         };
-
-        checks = packages // devShells;
       });
 }
